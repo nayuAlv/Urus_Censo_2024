@@ -1,9 +1,11 @@
 """
-Necessary functions to query the INE 2024 Bolivian Census 
+DuckDB-backed access to INE's 2024 Bolivian Census microdata through parquet files.
+
+Provides `CensoDB`, a query layer over the census parquet tables that
+extracts population counts, age structure, migration, and occupation
+filtered by indigenous "pueblo" group.
 
 """
-
-#from __future__ import annotations
 import duckdb
 import pandas as pd
 
@@ -14,7 +16,6 @@ from typing import Optional
 
 logger = logging.getLogger(__name__)
 
-# Paths to the .json dictionaries generated from the INE variable dictionary
 path_root = Path(__file__).parent.parent
 dtypes_path = path_root / "censo_2024_data" / "cpv2024_dtypes.json"
 labels_path = path_root / "censo_2024_data" / "cpv2024_labels.json"
