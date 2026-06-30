@@ -1,0 +1,10 @@
+.DS_Store
+**/.DS_Store
+__pycache__/
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+censo_2024_data/
+urus_poopo_data/
